@@ -75,8 +75,8 @@
   platforms: [PC, Steam]
   cover: "/assets/media/projects/FarmYourFriends/Cover].png"
   cover_alt: Farm Your Friends gameplay environment
-  external_link: https://store.steampowered.com/search/?developer=Meganeura%20Games
-  external_label: View Steam developer page
+  links:
+    - { label: Steam Page, url: "https://store.steampowered.com/app/1285270/Farm_Your_Friends/", icon: "fab fa-steam" }
   featured: true
   badge: Released on Steam
   summary: A fast-paced farming party game for up to 8 players, combining online co-op and PvP with farming, stealing, sabotage and unpredictable events.
@@ -119,8 +119,9 @@
   language: C#
   cover: "/assets/media/projects/Relíquias de Minas/Cover.png"
   cover_alt: Relíquias de Minas platforming scene
-  external_link: https://meganeura-games.itch.io/reliquias-de-minas
-  external_label: View project on Itch.io
+  links:
+    - { label: Itch.io, url: "https://meganeura-games.itch.io/reliquias-de-minas", icon: "fab fa-itch-io" }
+    - { label: GitHub, url: "https://github.com/meganeura-games/Relics", icon: "fab fa-github" }
   featured: true
   summary: A 3D platformer developed for a cultural project from the State of Minas Gerais, combining exploration, platforming challenges and regional themes.
   description: I was responsible for the game's gameplay programming and full level design, with the exception of HUD programming. My work included player movement and platforming feel, enemies, collectibles, hazards, platforms, progression, Cinemachine camera behavior, reusable level-building assets and Shader Graph effects.
@@ -174,8 +175,9 @@
   platforms: [Mobile]
   cover: "/assets/media/projects/Paletas de Minas/Cover.png"
   cover_alt: Paletas de Minas mobile painting interface
-  external_link: https://dusthelucky.itch.io/paletas-de-minas
-  external_label: View project on Itch.io
+  links:
+    - { label: Itch.io, url: "https://dusthelucky.itch.io/paletas-de-minas", icon: "fab fa-itch-io" }
+    - { label: GitHub, url: "https://github.com/meganeura-games/Paletas", icon: "fab fa-github" }
   featured: true
   summary: A mobile coloring game inspired by the cultural heritage of Minas Gerais, with a dynamic painting interface that adapts to each illustration and tracks color progress in real time.
   description: My main responsibility was programming the HUD and integrating it with the existing painting gameplay. The interface dynamically reflects each illustration, generates the correct palette, connects color selection to gameplay and updates painting progress in real time.
@@ -224,8 +226,8 @@
   platforms: [Windows]
   cover: "/assets/media/projects/Dracula's Blood Bank/Cover.png"
   cover_alt: Dracula's Blood Bank game jam project
-  external_link: https://spaguetti.itch.io/draculas-blood-bank
-  external_label: View project on Itch.io
+  links:
+    - { label: Itch.io, url: "https://spaguetti.itch.io/draculas-blood-bank", icon: "fab fa-itch-io" }
   featured: true
   summary: A fast-paced 2D resource-management game created in two days for Game Jam Plus, where Dracula commands vampire servants to gather enough blood before sunrise.
   description: I worked on programming throughout the jam, contributing across gameplay and integration tasks as the prototype rapidly evolved. Responsibilities overlapped heavily between programmers, so individual systems are intentionally not presented as exclusively mine.
@@ -260,6 +262,8 @@
   engine: Unity
   cover: "/assets/media/projects/Laser Heart/Cover.png"
   cover_alt: Laser Heart neon driving environment
+  links:
+    - { label: Google Drive, url: "https://drive.google.com/drive/folders/1V6l_ifoGpejeImi3r-471ahKrECNDzox?usp=sharing", icon: "fab fa-google-drive" }
   featured: true
   summary: A neon rhythm-driving game inspired by Guitar Hero, where the player drives through futuristic tracks and collects notes in sync with the music.
   description: Laser Heart was my first complete game project. I worked on the HUD and 3D environments, creating visual assets around a strong neon and bloom-based identity and learning the full game-development workflow.
@@ -304,6 +308,8 @@
   language: C#
   cover: /assets/media/projects/Reigns/Cover.png
   cover_alt: Reigns narrative management prototype
+  links:
+    - { label: GitHub, url: "https://github.com/marimara/Reigns", icon: "fab fa-github" }
   summary: A narrative-management prototype inspired by Dispatch, studying how a systemic visual novel can combine dialogue, characters, missions, conditions and progression.
   description: This prototype was primarily a technical study using Pixel Crushers Dialogue System for Unity. I explored how narrative content could connect to character stats, unlock conditions, mission assignments, day progression and story events instead of treating dialogue as an isolated system.
   contributions:
@@ -367,6 +373,8 @@
   language: C#
   cover: "/assets/media/projects/Snow Surfer/Cover.png"
   cover_alt: Snow Surfer 2D snowboarding gameplay
+  links:
+    - { label: GitHub, url: "https://github.com/marimara/Snow-Surfer", icon: "fab fa-github" }
   compact: true
   summary: A small 2D snowboarding study focused on physics-based rotation, tricks, speed control and temporary power-ups.
   contributions:
@@ -393,6 +401,8 @@
   language: C#
   cover: /assets/media/projects/TileMania/Cover.png
   cover_alt: TileMania 2D platformer study
+  links:
+    - { label: GitHub, url: "https://github.com/marimara/Tilemania", icon: "fab fa-github" }
   compact: true
   summary: A 2D platformer study created to practice Unity's Tilemap workflow, 2D character systems and Cinemachine tools.
   contributions:

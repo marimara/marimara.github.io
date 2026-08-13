@@ -140,13 +140,14 @@ footer { padding: 24px 40px; color: #98989f; font-size: .8rem; text-align: cente
 .dialog-header { max-width: 800px; }
 .dialog-header h2 { margin: 2px 0 13px; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.06; letter-spacing: -.04em; }
 .dialog-summary { max-width: 780px; margin: 0; color: #c4c4c9; font-size: 1.08rem; }
-.external-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 19px; color: var(--accent); font-weight: 700; text-decoration: none; }
-.external-link:hover { color: var(--accent-strong); }
 .project-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin: 34px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 13px; background: var(--line); }
 .project-facts div { padding: 15px 17px; background: #1d1d20; }
 .project-facts .fact-role { background: rgba(255, 181, 192, .075); }
 .project-facts dt { color: #85858c; font-size: .69rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
 .project-facts dd { margin: 2px 0 0; font-weight: 600; }
+.project-link-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.project-link-list a { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border: 1px solid rgba(255, 181, 192, .38); border-radius: 7px; background: rgba(255, 181, 192, .08); color: var(--accent-strong); font-size: .82rem; line-height: 1.35; text-decoration: none; }
+.project-link-list a:hover { border-color: var(--accent); background: rgba(255, 181, 192, .14); color: var(--text); }
 .dialog-section { margin-top: 44px; }
 .dialog-section > h3 { margin: 0 0 17px; font-size: 1.45rem; }
 .dialog-section > p, .dialog-section > ul { color: #c4c4c9; }

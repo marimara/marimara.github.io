@@ -141,7 +141,6 @@
             <p class="eyebrow">{{ project.filter | escape }}{% if project.status %} · {{ project.status | escape }}{% endif %}</p>
             <h2 id="project-title-{{ project.slug | escape }}">{{ project.title | escape }}</h2>
             <p class="dialog-summary">{{ project.summary | escape }}</p>
-            {% if project.external_link %}<a class="external-link" href="{{ project.external_link | escape }}" target="_blank" rel="noopener noreferrer">{{ project.external_label | default: 'View project' | escape }}<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>{% endif %}
           </header>
           <dl class="project-facts">
             {% if project.category %}<div><dt>Category</dt><dd>{{ project.category | escape }}</dd></div>{% endif %}
@@ -151,6 +150,7 @@
             {% if project.engine %}<div><dt>Engine</dt><dd>{{ project.engine | escape }}</dd></div>{% endif %}
             {% if project.language %}<div><dt>Language</dt><dd>{{ project.language | escape }}</dd></div>{% endif %}
             {% if project.platforms %}<div><dt>Platforms</dt><dd>{{ project.platforms | join: ', ' | escape }}</dd></div>{% endif %}
+            {% if project.links %}<div class="fact-links"><dt>Project Links</dt><dd class="project-link-list">{% for link in project.links %}<a href="{{ link.url | escape }}" target="_blank" rel="noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-external-link-alt' }}" aria-hidden="true"></i>{{ link.label | escape }}</a>{% endfor %}</dd></div>{% endif %}
           </dl>
           {% if project.description %}<div class="dialog-section"><h3>About the Project</h3><p>{{ project.description | escape }}</p></div>{% endif %}
           {% if project.contributions %}<div class="dialog-section contributions"><h3>My Contributions</h3><div class="contribution-grid">
