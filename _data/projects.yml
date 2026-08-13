@@ -9,6 +9,8 @@
   engine: Unity
   language: C#
   platforms: [Web]
+  cover: /assets/media/projects/BaciaHidrograficaVirtual/Cover.png
+  cover_alt: Bacia Hidrográfica Virtual interactive basin map
   featured: true
   summary: Educational platform developed in Unity that combines interactive hydrographic basin maps with minigames focused on land use, sanitation and flood management.
   description: "My work includes both basin navigation and visualization systems and the development of three minigames: Maps, Poop and Flood. My contributions include hex-grid systems, tile placement, configurable scoring rules, river connectivity, flow through pipe networks and a flood simulation based on per-cell map data."
@@ -56,10 +58,10 @@
     - Making spatial scoring, pipe flow and flooding visually understandable to the player.
   solution: I separate configuration, runtime state, logic and presentation whenever a system starts to grow. ScriptableObjects store configurable data and rules, while events connect gameplay logic to UI and visual effects. Spatial systems identify cells through grid coordinates instead of relying only on raycasts or scene references.
   media:
-    - { type: placeholder, label: "TODO: Add basin navigation media" }
-    - { type: placeholder, label: "TODO: Add Maps minigame video loop" }
-    - { type: placeholder, label: "TODO: Add Poop minigame video loop" }
-    - { type: placeholder, label: "TODO: Add Flood minigame video loop" }
+    - { type: image, src: "/assets/media/projects/BaciaHidrograficaVirtual/basin navigation media.png", alt: "Hydrographic basin navigation interface", label: "Navigation & Basin Maps" }
+    - { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Maps minigame video loop.mp4", label: "Maps Minigame — tile placement and river connectivity" }
+    - { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Poop minigame video loop.mp4", label: "Poop Minigame — pipe connectivity and flow" }
+    - { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Flood minigame video loop.mp4", label: "Flood Minigame — rainfall and flood simulation" }
 
 - slug: farm-your-friends
   title: Farm Your Friends
@@ -71,6 +73,8 @@
   role: 3D Artist / Scenario Designer / Project Manager
   engine: Unity
   platforms: [PC, Steam]
+  cover: "/assets/media/projects/FarmYourFriends/Cover].png"
+  cover_alt: Farm Your Friends gameplay environment
   external_link: https://store.steampowered.com/search/?developer=Meganeura%20Games
   external_label: View Steam developer page
   featured: true
@@ -99,7 +103,9 @@
         - Followed project progress and helped keep production aligned with milestones.
   technologies: [Unity, Blender, Project Management, Production Coordination]
   media:
-    - { type: placeholder, label: "TODO: Add project cover and environment art gallery" }
+    - { type: image, src: "/assets/media/projects/FarmYourFriends/D Environment & Scenario Art 1.png", alt: "Farm Your Friends environment and scenario art", label: "3D Environment & Scenario Art" }
+    - { type: image, src: "/assets/media/projects/FarmYourFriends/3D Environment & Scenario Art 2.png", alt: "Farm Your Friends farm environment assets", label: "Environment assets in Unity" }
+    - { type: image, src: "/assets/media/projects/FarmYourFriends/Characters & 3D Assets.png", alt: "Farm Your Friends characters and 3D assets", label: "Characters & 3D Assets" }
 
 - slug: reliquias-de-minas
   title: Relíquias de Minas
@@ -111,6 +117,8 @@
   role: Gameplay Programmer / Level Designer / Technical Art
   engine: Unity
   language: C#
+  cover: "/assets/media/projects/Relíquias de Minas/Cover.png"
+  cover_alt: Relíquias de Minas platforming scene
   external_link: https://meganeura-games.itch.io/reliquias-de-minas
   external_label: View project on Itch.io
   featured: true
@@ -151,8 +159,8 @@
         - Transparent Lit Shield Bubble Shader using Fresnel-driven edge, emission and alpha behavior.
   technologies: [Unity, C#, Cinemachine, Shader Graph, Unity Input System, ScriptableObjects / DeTach Variables, Odin Inspector]
   media:
-    - { type: placeholder, label: "TODO: Add platformer game-feel video" }
-    - { type: placeholder, label: "TODO: Add Shader Graph comparison" }
+    - { type: video, src: "/assets/media/projects/Relíquias de Minas/platformer game-feel video.mp4", label: "Platformer Game Feel — movement, camera and level systems" }
+    - { type: video, src: "/assets/media/projects/Relíquias de Minas/Shield and Toon Shader.mp4", label: "Shader Graph — shield and toon shader" }
 
 - slug: paletas-de-minas
   title: Paletas de Minas
@@ -164,6 +172,8 @@
   engine: Unity
   language: C#
   platforms: [Mobile]
+  cover: "/assets/media/projects/Paletas de Minas/Cover.png"
+  cover_alt: Paletas de Minas mobile painting interface
   external_link: https://dusthelucky.itch.io/paletas-de-minas
   external_label: View project on Itch.io
   featured: true
@@ -199,7 +209,7 @@
   challenges:
     - Integrating a dynamic HUD with an established painting system without duplicating or conflicting with core gameplay logic.
   media:
-    - { type: placeholder, label: "TODO: Add dynamic painting HUD video loop" }
+    - { type: video, src: "/assets/media/projects/Paletas de Minas/dynamic painting HUD video loop.mp4", label: "Dynamic Painting HUD and gameplay integration" }
 
 - slug: draculas-blood-bank
   title: Dracula's Blood Bank
@@ -212,6 +222,8 @@
   engine: Unity
   language: C#
   platforms: [Windows]
+  cover: "/assets/media/projects/Dracula's Blood Bank/Cover.png"
+  cover_alt: Dracula's Blood Bank game jam project
   external_link: https://spaguetti.itch.io/draculas-blood-bank
   external_label: View project on Itch.io
   featured: true
@@ -236,7 +248,7 @@
   challenges:
     - With only two days to design, implement, integrate and polish the game, programming prioritized rapid iteration, simple systems, constant communication and fast debugging.
   media:
-    - { type: placeholder, label: "TODO: Add game jam gameplay footage" }
+    - { type: image, src: "/assets/media/projects/Dracula's Blood Bank/InGameImage.png", alt: "Dracula's Blood Bank gameplay", label: "Two-day Game Jam Plus prototype" }
 
 - slug: laser-heart
   title: Laser Heart
@@ -246,6 +258,8 @@
   period: "TODO: Confirm development period"
   role: 3D Environment Artist / HUD & UI Implementation
   engine: Unity
+  cover: "/assets/media/projects/Laser Heart/Cover.png"
+  cover_alt: Laser Heart neon driving environment
   featured: true
   summary: A neon rhythm-driving game inspired by Guitar Hero, where the player drives through futuristic tracks and collects notes in sync with the music.
   description: Laser Heart was my first complete game project. I worked on the HUD and 3D environments, creating visual assets around a strong neon and bloom-based identity and learning the full game-development workflow.
@@ -274,7 +288,10 @@
   challenges:
     - Designing and iterating assets based on how emissive geometry interacted with bloom in the final gameplay camera.
   media:
-    - { type: placeholder, label: "TODO: Add bloom-driven environment gallery" }
+    - { type: video, src: "/assets/media/projects/Laser Heart/GameplayVideo.mp4", label: "Laser Heart gameplay and bloom-driven environment" }
+    - { type: image, src: "/assets/media/projects/Laser Heart/environment gallery 1.png", alt: "Laser Heart neon environment", label: "Bloom-Driven Environment Art" }
+    - { type: image, src: "/assets/media/projects/Laser Heart/environment gallery 2.png", alt: "Laser Heart futuristic track environment", label: "Environment and track assets" }
+    - { type: image, src: "/assets/media/projects/Laser Heart/Menu.png", alt: "Laser Heart menu interface", label: "HUD & Menu Implementation" }
 
 - slug: reigns
   title: Reigns
@@ -285,6 +302,8 @@
   role: Game Programmer
   engine: Unity
   language: C#
+  cover: /assets/media/projects/Reigns/Cover.png
+  cover_alt: Reigns narrative management prototype
   summary: A narrative-management prototype inspired by Dispatch, studying how a systemic visual novel can combine dialogue, characters, missions, conditions and progression.
   description: This prototype was primarily a technical study using Pixel Crushers Dialogue System for Unity. I explored how narrative content could connect to character stats, unlock conditions, mission assignments, day progression and story events instead of treating dialogue as an isolated system.
   contributions:
@@ -310,7 +329,7 @@
         - Added active and completed states, rewards and outcome conditions.
   technologies: [Unity, C#, Pixel Crushers Dialogue System, ScriptableObjects, Odin Inspector, DOTween, Event-Driven Gameplay Logic]
   media:
-    - { type: placeholder, label: "TODO: Add narrative system screenshots" }
+    - { type: image, src: "/assets/media/projects/Reigns/InGameImage.png", alt: "Reigns narrative and mission management interface", label: "Narrative and mission-management systems" }
 
 - slug: rotten
   title: Rotten
@@ -320,6 +339,8 @@
   period: "TODO: Confirm development period"
   role: 3D Environment Artist
   engine: Unity
+  cover: /assets/media/projects/Rotten/Cover.png
+  cover_alt: Rotten survival RPG environment
   compact: true
   summary: A survival RPG prototype where my contribution focused on building the visual world through vegetation, environment models and scene assembly.
   contributions:
@@ -332,7 +353,8 @@
         - Worked on composition, asset placement and visual density to create distinct natural areas.
   technologies: [Unity, 3D Modeling, Environment Art, Level / Scene Dressing]
   media:
-    - { type: placeholder, label: "TODO: Add environment art gallery" }
+    - { type: image, src: "/assets/media/projects/Rotten/environment art gallery 1.png", alt: "Rotten outdoor environment art", label: "Environment Art & World Building" }
+    - { type: image, src: "/assets/media/projects/Rotten/environment art gallery 2.png", alt: "Rotten scene assembly and vegetation", label: "Scene dressing and vegetation" }
 
 - slug: snow-surfer
   title: Snow Surfer
@@ -343,6 +365,8 @@
   role: Game Programmer
   engine: Unity
   language: C#
+  cover: "/assets/media/projects/Snow Surfer/Cover.png"
+  cover_alt: Snow Surfer 2D snowboarding gameplay
   compact: true
   summary: A small 2D snowboarding study focused on physics-based rotation, tricks, speed control and temporary power-ups.
   contributions:
@@ -367,6 +391,8 @@
   role: Game Programmer
   engine: Unity
   language: C#
+  cover: /assets/media/projects/TileMania/Cover.png
+  cover_alt: TileMania 2D platformer study
   compact: true
   summary: A 2D platformer study created to practice Unity's Tilemap workflow, 2D character systems and Cinemachine tools.
   contributions:
@@ -380,4 +406,4 @@
         - Configured a Cinemachine State-Driven Camera based on animation and player state.
   technologies: [Unity, C#, Tilemap / Rule Tiles, Cinemachine State-Driven Camera, Animator, Rigidbody2D / Physics Material 2D, Unity Input System]
   media:
-    - { type: placeholder, label: "TODO: Add Tilemap and camera video loop" }
+    - { type: video, src: "/assets/media/projects/TileMania/Tilemap and camera video loop.mp4", label: "Tilemap workflow and Cinemachine camera behavior" }

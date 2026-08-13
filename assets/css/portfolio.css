@@ -5,8 +5,8 @@
   --line: #333337;
   --text: #f2f2f3;
   --muted: #aaaab1;
-  --accent: #e7bd57;
-  --accent-strong: #ffd36b;
+  --accent: #ffb5c0;
+  --accent-strong: #ffd2d9;
   --danger: #ff8f8f;
   --radius: 22px;
   --shadow: 0 24px 70px rgba(0, 0, 0, .34);
@@ -67,7 +67,7 @@ button { font: inherit; }
 .project-filters { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 28px; }
 .project-filters button { padding: 8px 15px; border: 1px solid transparent; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; }
 .project-filters button:hover { color: var(--text); }
-.project-filters button.is-active { border-color: rgba(231, 189, 87, .38); background: rgba(231, 189, 87, .1); color: var(--accent-strong); }
+.project-filters button.is-active { border-color: rgba(255, 181, 192, .42); background: rgba(255, 181, 192, .1); color: var(--accent-strong); }
 .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 .project-card { min-width: 0; transition: opacity .2s ease, transform .2s ease; }
 .project-card > button { width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
@@ -104,7 +104,7 @@ button { font: inherit; }
 .skill-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .skill-list + .skill-list { margin-top: 10px; }
 .skill-list li { padding: 5px 10px; border: 1px solid #37373b; border-radius: 7px; color: #bebec4; font-size: .82rem; }
-.skill-list.is-featured li { border-color: rgba(231, 189, 87, .36); background: rgba(231, 189, 87, .08); color: var(--accent-strong); font-weight: 700; }
+.skill-list.is-featured li { border-color: rgba(255, 181, 192, .38); background: rgba(255, 181, 192, .08); color: var(--accent-strong); font-weight: 700; }
 
 .resume-block { margin-top: 36px; }
 .resume-block h3 { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; }
@@ -144,7 +144,7 @@ footer { padding: 24px 40px; color: #98989f; font-size: .8rem; text-align: cente
 .external-link:hover { color: var(--accent-strong); }
 .project-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin: 34px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 13px; background: var(--line); }
 .project-facts div { padding: 15px 17px; background: #1d1d20; }
-.project-facts .fact-role { background: rgba(231, 189, 87, .075); }
+.project-facts .fact-role { background: rgba(255, 181, 192, .075); }
 .project-facts dt { color: #85858c; font-size: .69rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
 .project-facts dd { margin: 2px 0 0; font-weight: 600; }
 .dialog-section { margin-top: 44px; }
@@ -158,7 +158,7 @@ footer { padding: 24px 40px; color: #98989f; font-size: .8rem; text-align: cente
 .contribution-grid p { margin: 0 0 13px; color: #d0d0d4; }
 .contribution-grid ul { margin: 0; padding-left: 20px; color: var(--muted); }
 .contribution-grid li + li { margin-top: 5px; }
-.context-note { padding: 10px 13px; border-left: 3px solid var(--accent); background: rgba(231, 189, 87, .07); }
+.context-note { padding: 10px 13px; border-left: 3px solid var(--accent); background: rgba(255, 181, 192, .07); }
 .technology-list { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 !important; list-style: none; }
 .technology-list li { padding: 6px 11px; border: 1px solid #424247; border-radius: 8px; background: #202023; color: #d2d2d6; }
 .media-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
@@ -187,7 +187,7 @@ footer { padding: 24px 40px; color: #98989f; font-size: .8rem; text-align: cente
   .mobile-nav { position: absolute; top: calc(100% + 1px); right: 12px; left: 12px; display: none; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: #202023; box-shadow: var(--shadow); }
   .mobile-nav.is-open { display: grid; }
   .mobile-nav a { padding: 11px 13px; border-radius: 8px; text-decoration: none; }
-  .mobile-nav a.is-active { background: rgba(231,189,87,.09); color: var(--accent); }
+  .mobile-nav a.is-active { background: rgba(255, 181, 192, .09); color: var(--accent); }
   .site-shell { display: block; width: calc(100% - 24px); margin: 12px auto 24px; }
   .profile-card, .desktop-nav { display: none; }
   .portfolio-section { padding: 46px 28px 64px; }

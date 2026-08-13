@@ -5,7 +5,7 @@ profile:
   email: marianasoaresmateus52@gmail.com
   phone_display: "(31) 98588-2246"
   phone_href: "+5531985882246"
-  avatar: ""
+  avatar: /assets/media/ProfilePicture.jpeg
 
 socials:
   - label: GitHub
