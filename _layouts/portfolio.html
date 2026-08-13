@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111112">
+    <meta name="color-scheme" content="dark">
+    {% seo %}
+    <link rel="icon" href="{{ '/assets/img/portfolio/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/lib/fonts/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/lib/fontawesome-free/css/all.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
+    <script src="{{ '/assets/js/portfolio.js' | relative_url }}" defer></script>
+  </head>
+  <body>
+    {% assign portfolio = site.data.portfolio %}
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="mobile-header">
+      <a class="mobile-identity" href="#projects" aria-label="Back to projects">
+        <span class="mobile-monogram" aria-hidden="true">MS</span>
+        <span><strong>{{ portfolio.profile.name | escape }}</strong><small>{{ portfolio.profile.role | escape }}</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="sr-only">Toggle navigation</span><i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#projects">Projects</a><a href="#about">About Me</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="site-shell">
+      <aside class="profile-card" aria-label="Profile">
+        <div class="profile-photo{% unless portfolio.profile.avatar != blank %} is-placeholder{% endunless %}">
+          {% if portfolio.profile.avatar != blank %}
+            <img src="{{ portfolio.profile.avatar | relative_url | escape }}" alt="Portrait of {{ portfolio.profile.name | escape }}">
+          {% else %}
+            <span class="profile-initials" aria-hidden="true">MS</span>
+            <small>TODO: Add profile photo</small>
+          {% endif %}
+        </div>
+        <h1>{{ portfolio.profile.name | escape }}</h1>
+        <p class="role-pill">{{ portfolio.profile.role | escape }}</p>
+        <dl class="profile-details">
+          <div><dt><i class="far fa-envelope" aria-hidden="true"></i>Email</dt><dd><a href="mailto:{{ portfolio.profile.email | escape }}">{{ portfolio.profile.email | escape }}</a></dd></div>
+          <div><dt><i class="fas fa-mobile-alt" aria-hidden="true"></i>Phone</dt><dd><a href="tel:{{ portfolio.profile.phone_href | escape }}">{{ portfolio.profile.phone_display | escape }}</a></dd></div>
+          <div><dt><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Location</dt><dd>{{ portfolio.profile.location | escape }}</dd></div>
+        </dl>
+        <nav class="social-links" aria-label="Professional links">
+          {% for social in portfolio.socials %}
+            <a href="{{ social.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.label | escape }}"><i class="{{ social.icon }}" aria-hidden="true"></i></a>
+          {% endfor %}
+        </nav>
+      </aside>
+
+      <main id="main-content" class="portfolio-panel">
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#projects" class="is-active">Projects</a><a href="#about">About Me</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+        </nav>
+
+        <section id="projects" class="portfolio-section projects-section" aria-labelledby="projects-title">
+          <div class="section-heading"><p class="eyebrow">Selected work</p><h2 id="projects-title">Projects</h2><span aria-hidden="true"></span></div>
+          <p class="section-intro">Game programming and Unity development are the core of my work, supported by experience across level design, technical art, 3D production and project management.</p>
+          <div class="project-filters" role="group" aria-label="Filter projects">
+            <button type="button" class="is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="games" aria-pressed="false">Games</button>
+            <button type="button" data-filter="apps" aria-pressed="false">Apps</button>
+            <button type="button" data-filter="others" aria-pressed="false">Others</button>
+          </div>
+          <div class="project-grid" aria-live="polite">
+            {% for project in site.data.projects %}
+              <article class="project-card{% if project.featured %} is-featured{% endif %}{% if project.compact %} is-compact{% endif %}" data-category="{{ project.filter | downcase | escape }}">
+                <h3 class="sr-only" id="card-title-{{ project.slug | escape }}">{{ project.title | escape }}</h3>
+                <button type="button" data-project="{{ project.slug | escape }}" aria-haspopup="dialog" aria-labelledby="card-title-{{ project.slug | escape }}">
+                  <span class="project-cover">
+                    {% if project.cover %}
+                      <img src="{{ project.cover | relative_url | escape }}" alt="{{ project.cover_alt | default: project.title | escape }}" loading="lazy">
+                    {% else %}
+                      <span class="cover-placeholder"><i class="fas fa-image" aria-hidden="true"></i><span>TODO: Add project cover</span></span>
+                    {% endif %}
+                    {% if project.badge %}<span class="project-badge">{{ project.badge | escape }}</span>{% endif %}
+                    <span class="open-indicator" aria-hidden="true"><i class="fas fa-plus"></i></span>
+                  </span>
+                  <span class="project-card-copy">
+                    <span><span class="project-visible-title">{{ project.title | escape }}</span><span class="project-category">{{ project.category | escape }}</span></span>
+                    <span class="project-card-meta">{{ project.engine | escape }}{% if project.language %} · {{ project.language | escape }}{% endif %}</span>
+                  </span>
+                </button>
+              </article>
+            {% endfor %}
+          </div>
+          <p class="filter-empty" hidden>No projects in this category yet.</p>
+        </section>
+
+        <section id="about" class="portfolio-section" aria-labelledby="about-title">
+          <div class="section-heading"><p class="eyebrow">Profile</p><h2 id="about-title">About Me</h2><span aria-hidden="true"></span></div>
+          <div class="about-copy">{% for paragraph in portfolio.about %}<p>{{ paragraph | escape }}</p>{% endfor %}</div>
+          <h3 class="subsection-title">Specialties</h3>
+          <div class="specialty-grid">
+            {% for specialty in portfolio.specialties %}
+              <article class="specialty-card"><i class="{{ specialty.icon }}" aria-hidden="true"></i><div><h4>{{ specialty.title | escape }}</h4><p>{{ specialty.description | escape }}</p></div></article>
+            {% endfor %}
+          </div>
+          <h3 class="subsection-title">Experience With</h3>
+          <div class="skills-grid">
+            {% for group in portfolio.experience_with %}
+              <div class="skill-group"><h4><i class="{{ group.icon }}" aria-hidden="true"></i>{{ group.title | escape }}</h4>
+                {% if group.featured %}<ul class="skill-list is-featured">{% for item in group.featured %}<li>{{ item | escape }}</li>{% endfor %}</ul>{% endif %}
+                <ul class="skill-list">{% for item in group.items %}<li>{{ item | escape }}</li>{% endfor %}</ul>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section id="resume" class="portfolio-section" aria-labelledby="resume-title">
+          <div class="section-heading"><p class="eyebrow">Background</p><h2 id="resume-title">Resume</h2><span aria-hidden="true"></span></div>
+          <div class="resume-block"><h3><i class="fas fa-briefcase" aria-hidden="true"></i>Experience</h3>
+            <ol class="timeline">{% for item in portfolio.experience %}<li><h4>{{ item.organization | escape }}</h4><p class="timeline-period">{{ item.period | escape }}</p><p class="timeline-role">{{ item.role | escape }}</p><p>{{ item.description | escape }}</p></li>{% endfor %}</ol>
+          </div>
+          <div class="resume-block"><h3><i class="fas fa-graduation-cap" aria-hidden="true"></i>Education</h3>
+            <ol class="timeline compact-timeline">{% for item in portfolio.education %}<li><h4>{{ item.organization | escape }}</h4><p class="timeline-period">{{ item.period | escape }}</p><p class="timeline-role">{{ item.course | escape }}</p></li>{% endfor %}</ol>
+          </div>
+          <div class="highlights"><h3>Highlights &amp; Achievements</h3><ul>{% for highlight in portfolio.highlights %}<li><i class="fas fa-award" aria-hidden="true"></i>{{ highlight | escape }}</li>{% endfor %}</ul></div>
+        </section>
+
+        <section id="contact" class="portfolio-section contact-section" aria-labelledby="contact-title">
+          <div class="section-heading"><p class="eyebrow">Let's connect</p><h2 id="contact-title">Contact</h2><span aria-hidden="true"></span></div>
+          <p>Interested in working together or discussing a game-development project? Email is the best way to reach me.</p>
+          <a class="contact-cta" href="mailto:{{ portfolio.profile.email | escape }}"><i class="far fa-envelope" aria-hidden="true"></i>{{ portfolio.profile.email | escape }}</a>
+          <div class="contact-links">{% for social in portfolio.socials %}<a href="{{ social.url | escape }}" target="_blank" rel="noopener noreferrer"><i class="{{ social.icon }}" aria-hidden="true"></i>{{ social.label | escape }}</a>{% endfor %}</div>
+        </section>
+        <footer><p>© {{ 'now' | date: '%Y' }} {{ portfolio.profile.name | escape }}. Built with Jekyll.</p></footer>
+      </main>
+    </div>
+
+    {% for project in site.data.projects %}
+      <dialog class="project-dialog" id="project-{{ project.slug | escape }}" aria-labelledby="project-title-{{ project.slug | escape }}">
+        <div class="dialog-shell">
+          <button class="dialog-close" type="button" aria-label="Close project details"><i class="fas fa-times" aria-hidden="true"></i></button>
+          <header class="dialog-header">
+            <p class="eyebrow">{{ project.filter | escape }}{% if project.status %} · {{ project.status | escape }}{% endif %}</p>
+            <h2 id="project-title-{{ project.slug | escape }}">{{ project.title | escape }}</h2>
+            <p class="dialog-summary">{{ project.summary | escape }}</p>
+            {% if project.external_link %}<a class="external-link" href="{{ project.external_link | escape }}" target="_blank" rel="noopener noreferrer">{{ project.external_label | default: 'View project' | escape }}<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>{% endif %}
+          </header>
+          <dl class="project-facts">
+            {% if project.category %}<div><dt>Category</dt><dd>{{ project.category | escape }}</dd></div>{% endif %}
+            {% if project.period %}<div><dt>Period</dt><dd>{{ project.period | escape }}</dd></div>{% endif %}
+            {% if project.context %}<div><dt>Studio / Context</dt><dd>{{ project.context | escape }}</dd></div>{% endif %}
+            {% if project.role %}<div class="fact-role"><dt>My Role</dt><dd>{{ project.role | escape }}</dd></div>{% endif %}
+            {% if project.engine %}<div><dt>Engine</dt><dd>{{ project.engine | escape }}</dd></div>{% endif %}
+            {% if project.language %}<div><dt>Language</dt><dd>{{ project.language | escape }}</dd></div>{% endif %}
+            {% if project.platforms %}<div><dt>Platforms</dt><dd>{{ project.platforms | join: ', ' | escape }}</dd></div>{% endif %}
+          </dl>
+          {% if project.description %}<div class="dialog-section"><h3>About the Project</h3><p>{{ project.description | escape }}</p></div>{% endif %}
+          {% if project.contributions %}<div class="dialog-section contributions"><h3>My Contributions</h3><div class="contribution-grid">
+            {% for contribution in project.contributions %}<article><h4>{{ contribution.title | escape }}</h4>{% if contribution.intro %}<p>{{ contribution.intro | escape }}</p>{% endif %}{% if contribution.bullets %}<ul>{% for bullet in contribution.bullets %}<li>{{ bullet | escape }}</li>{% endfor %}</ul>{% endif %}</article>{% endfor %}
+          </div></div>{% endif %}
+          {% if project.team_systems %}<div class="dialog-section"><h3>Systems Developed by the Programming Team</h3><p class="context-note">These systems are listed as shared team work; no exclusive ownership is claimed.</p><ul>{% for item in project.team_systems %}<li>{{ item | escape }}</li>{% endfor %}</ul></div>{% endif %}
+          {% if project.challenges %}<div class="dialog-section"><h3>Technical Challenges</h3><ul>{% for challenge in project.challenges %}<li>{{ challenge | escape }}</li>{% endfor %}</ul>{% if project.solution %}<p>{{ project.solution | escape }}</p>{% endif %}</div>{% endif %}
+          {% if project.technologies %}<div class="dialog-section"><h3>Technologies &amp; Tools</h3><ul class="technology-list">{% for technology in project.technologies %}<li>{{ technology | escape }}</li>{% endfor %}</ul></div>{% endif %}
+          {% if project.media %}<div class="dialog-section"><h3>Project Media</h3><div class="media-grid">{% for media in project.media %}
+            {% case media.type %}
+              {% when 'image' %}<figure class="media-item"><img data-src="{{ media.src | relative_url | escape }}" alt="{{ media.alt | default: project.title | escape }}" loading="lazy"><figcaption>{{ media.label | escape }}</figcaption></figure>
+              {% when 'video' %}<figure class="media-item"><video data-src="{{ media.src | relative_url | escape }}" muted loop playsinline preload="none" aria-label="{{ media.label | escape }}"></video><figcaption>{{ media.label | escape }}</figcaption></figure>
+              {% else %}<div class="media-placeholder"><i class="fas fa-photo-video" aria-hidden="true"></i><span>{{ media.label | escape }}</span></div>
+            {% endcase %}
+          {% endfor %}</div></div>{% endif %}
+        </div>
+      </dialog>
+    {% endfor %}
+  </body>
+</html>

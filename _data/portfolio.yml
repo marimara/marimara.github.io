@@ -1,0 +1,83 @@
+profile:
+  name: Mariana Soares Mateus
+  role: Game Programmer / Unity Developer
+  location: Belo Horizonte - Brazil
+  email: marianasoaresmateus52@gmail.com
+  phone_display: "(31) 98588-2246"
+  phone_href: "+5531985882246"
+  avatar: ""
+
+socials:
+  - label: GitHub
+    url: https://github.com/marimara
+    icon: fab fa-github
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/mariana-soares-mateus-1a7a21427
+    icon: fab fa-linkedin-in
+  - label: Itch.io
+    url: https://meganeura-games.itch.io/
+    icon: fab fa-itch-io
+  - label: Steam
+    url: https://store.steampowered.com/search/?developer=Meganeura%20Games
+    icon: fab fa-steam
+  - label: ArtStation
+    url: https://www.artstation.com/marimara52
+    icon: fab fa-artstation
+  - label: Meganeura Games
+    url: https://meganeuragames.com/
+    icon: fas fa-globe
+
+about:
+  - Mariana is a game developer focused on gameplay programming, Unity development and interactive systems. She has experience working across programming, level design, technical art, 3D production and project management, giving her a broad understanding of the game development pipeline.
+  - She enjoys building systems that are clear, reusable and easy to iterate on, with special interest in gameplay mechanics, UI/gameplay integration, level-building workflows and data-driven tools.
+  - She has worked on commercial, cultural and educational projects, including a game released on Steam and interactive projects developed in partnership with institutions such as the Federal University of Minas Gerais. Her multidisciplinary background helps her communicate easily with programmers, artists and designers throughout production.
+
+specialties:
+  - title: Gameplay Programming
+    icon: fas fa-gamepad
+    description: Development of gameplay systems and mechanics in Unity, with a focus on responsive interactions, modular architecture and clear player feedback.
+  - title: UI & Gameplay Integration
+    icon: fas fa-layer-group
+    description: Programming interfaces that communicate directly with gameplay systems, keeping HUD state, progression and player interaction synchronized.
+  - title: Level Design & Game Systems
+    icon: fas fa-cubes
+    description: Creation and implementation of levels, reusable gameplay elements and workflows that make level building and iteration faster.
+  - title: Technical Art & 3D Integration
+    icon: fas fa-shapes
+    description: Experience with Shader Graph, 3D assets and in-engine visual integration, bridging programming and art when a project requires it.
+
+experience_with:
+  - title: Programming & Unity Development
+    icon: fas fa-code
+    featured: [C#, Unity, Gameplay Programming, UI Programming]
+    items: [ScriptableObjects, Data-Driven Systems, UnityEvents / Event-Driven Systems, Unity Input System, Cinemachine, Shader Graph, DOTween, Odin Inspector, Dialogue System for Unity, Tilemap / Rule Tiles, Animator, TextMeshPro, 2D Physics / Rigidbody2D, 3D Physics / Rigidbody, Custom Editor / Level-Building Tools, Rider, Visual Studio, Git, GitHub, Fork (Git Client), Python]
+  - title: Level Design & Production
+    icon: fas fa-sitemap
+    items: [Level Design, Level-Building Workflows, Scene Assembly, Gameplay Balancing, Project Management, Production Coordination, Team Collaboration, Git / Version Control Workflow]
+  - title: 3D Art & Environment Production
+    icon: fas fa-cube
+    items: [Blender, 3D Modeling, UV Mapping, Texturing, Environment Art, Prop Modeling, Character Modeling, Scene Dressing / Environment Assembly, Asset Preparation for Unity, Unity Materials & Material Setup, GIMP, Krita]
+  - title: Platforms
+    icon: fas fa-desktop
+    items: [PC Game Development, Mobile Game Development, Web Game Development, Steam Release / Publishing Experience]
+
+experience:
+  - organization: Meganeura Games / Independent Game Development Team
+    period: 2020 - Present
+    role: Game Programmer / Unity Developer / 3D Artist / Level Designer / Project Manager
+    description: Develops gameplay systems, UI, level design and 3D content for commercial, cultural and educational games made in Unity. The team has worked together since 2020; Meganeura Games was formally established in 2022.
+
+education:
+  - organization: PUC Minas
+    period: 2018 - 2020
+    course: Digital Games
+  - organization: CEFET-MG
+    period: 2013 - 2015
+    course: Environmental Technician
+
+highlights:
+  - Best Game Award - PUC Minas, 2018
+  - Brasil Game Show - Indie Area, 2022
+  - Game Jam Plus
+  - Speaker - PUC Minas Digital Games Seminar, 2026
+  - Presenter - Minas Summit Demo Day, 2026

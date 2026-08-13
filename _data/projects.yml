@@ -1,0 +1,383 @@
+- slug: bacia-hidrografica-virtual
+  title: Bacia Hidrográfica Virtual
+  filter: Apps
+  category: Educational Game / Interactive Platform
+  status: In Development
+  period: 2025 - Present
+  context: Federal University of Minas Gerais
+  role: Game Programmer
+  engine: Unity
+  language: C#
+  platforms: [Web]
+  featured: true
+  summary: Educational platform developed in Unity that combines interactive hydrographic basin maps with minigames focused on land use, sanitation and flood management.
+  description: "My work includes both basin navigation and visualization systems and the development of three minigames: Maps, Poop and Flood. My contributions include hex-grid systems, tile placement, configurable scoring rules, river connectivity, flow through pipe networks and a flood simulation based on per-cell map data."
+  contributions:
+    - title: Navigation & Basin Maps
+      intro: Interactive basin selection, camera navigation and procedural 3D map generation from editable hex-grid land-use data, including automatic river visualization.
+      bullets:
+        - Selection and navigation system between different hydrographic basins.
+        - Event-driven updates for basin title, description and destination scene.
+        - Camera controls with drag, zoom and navigation limits.
+        - 3D map rendering from land-use data stored in a hexagonal grid.
+        - Special river rendering based on neighboring cell connections.
+        - Custom editor tool for painting and configuring the hex map directly in the Inspector.
+    - title: Maps Minigame
+      intro: Hex-based tile placement with contextual scoring, modular ScriptableObject rules and automatic river connectivity and rotation based on neighboring tiles.
+      bullets:
+        - Runtime hex-grid generation, deck and tile-placement systems.
+        - Placement preview and rotation in 60-degree increments.
+        - Modular scoring and rule system based on ScriptableObjects.
+        - Neighbor calculation for odd and even rows in a hex grid.
+        - River connectivity, automatic river-piece rotation and cascading score feedback.
+    - title: Poop Minigame
+      intro: Dynamic pipe connectivity and flow calculation, where each pipe's rotation and condition determine the valid path, leaks and gameplay interactions.
+      bullets:
+        - Puzzle system based on a network of rotatable pipes.
+        - Spatial validation of connections between pipe endpoints.
+        - Calculation and visualization of the path followed by the flow.
+        - Flow interactions with broken pipes, buffs and debuffs.
+        - Repair and cleaning tools integrated into the puzzle rules.
+        - Movement, repair and win/lose state management.
+    - title: Flood Minigame
+      intro: A data-driven urban planning system where player choices affect how rainfall is absorbed, drained and accumulated across the map.
+      bullets:
+        - Architecture separating static data, runtime state, grid, simulation and presentation.
+        - Selection and placement system for urban and environmental tiles.
+        - ScriptableObject-driven tiles with water absorption and other properties.
+        - Per-cell rainfall and flood simulation with water and elevation visualization.
+        - Event-driven rain sequencing connecting gameplay, HUD and VFX.
+        - Tooltips showing received, drained and absorbed water after the simulation.
+  technologies: [Unity, C#, ScriptableObjects, Unity Input System, UnityEvents / Event-Driven Architecture, DeTach, DOTween, Odin Inspector]
+  challenges:
+    - Working with multiple systems based on hexagonal grids and neighborhood relationships.
+    - Creating configurable systems that support several levels and content types without duplicating logic.
+    - Synchronizing gameplay rules, runtime data and visual feedback across minigames with very different goals.
+    - Making spatial scoring, pipe flow and flooding visually understandable to the player.
+  solution: I separate configuration, runtime state, logic and presentation whenever a system starts to grow. ScriptableObjects store configurable data and rules, while events connect gameplay logic to UI and visual effects. Spatial systems identify cells through grid coordinates instead of relying only on raycasts or scene references.
+  media:
+    - { type: placeholder, label: "TODO: Add basin navigation media" }
+    - { type: placeholder, label: "TODO: Add Maps minigame video loop" }
+    - { type: placeholder, label: "TODO: Add Poop minigame video loop" }
+    - { type: placeholder, label: "TODO: Add Flood minigame video loop" }
+
+- slug: farm-your-friends
+  title: Farm Your Friends
+  filter: Games
+  category: Party Game / Online Co-op & PvP
+  status: Released
+  period: Released May 1, 2025
+  context: Meganeura Games
+  role: 3D Artist / Scenario Designer / Project Manager
+  engine: Unity
+  platforms: [PC, Steam]
+  external_link: https://store.steampowered.com/search/?developer=Meganeura%20Games
+  external_label: View Steam developer page
+  featured: true
+  badge: Released on Steam
+  summary: A fast-paced farming party game for up to 8 players, combining online co-op and PvP with farming, stealing, sabotage and unpredictable events.
+  description: Farm Your Friends is a commercial multiplayer party game released on Steam by Meganeura Games. My main contribution was on the art and production side of the project, creating 3D environments, characters and props and working in project management during approximately half of the development cycle.
+  contributions:
+    - title: 3D Environment & Scenario Art
+      intro: Creation of stylized 3D environments, farm structures and scenario assets used to build the gameplay spaces.
+      bullets:
+        - Modeled environment and scenario assets for the game.
+        - Created farm structures, decorative elements and environmental props.
+        - Worked within the project's stylized visual direction and real-time constraints.
+        - Prepared assets for integration into Unity.
+    - title: Characters & 3D Assets
+      intro: Creation of stylized characters and gameplay and environment objects used throughout the game.
+      bullets:
+        - Modeled characters, gameplay props and environmental objects.
+        - Prepared game-ready assets for the production pipeline.
+        - Collaborated with the art and animation pipeline as assets moved into later production stages.
+    - title: Project Management
+      intro: Production coordination and project management responsibilities during approximately half of the development period.
+      bullets:
+        - Helped organize production priorities and team tasks.
+        - Supported communication and coordination between team members.
+        - Followed project progress and helped keep production aligned with milestones.
+  technologies: [Unity, Blender, Project Management, Production Coordination]
+  media:
+    - { type: placeholder, label: "TODO: Add project cover and environment art gallery" }
+
+- slug: reliquias-de-minas
+  title: Relíquias de Minas
+  filter: Games
+  category: 3D Platformer / Cultural Game
+  status: Released
+  period: "TODO: Confirm development period"
+  context: Cultural grant from the State of Minas Gerais, Brazil
+  role: Gameplay Programmer / Level Designer / Technical Art
+  engine: Unity
+  language: C#
+  external_link: https://meganeura-games.itch.io/reliquias-de-minas
+  external_label: View project on Itch.io
+  featured: true
+  summary: A 3D platformer developed for a cultural project from the State of Minas Gerais, combining exploration, platforming challenges and regional themes.
+  description: I was responsible for the game's gameplay programming and full level design, with the exception of HUD programming. My work included player movement and platforming feel, enemies, collectibles, hazards, platforms, progression, Cinemachine camera behavior, reusable level-building assets and Shader Graph effects.
+  contributions:
+    - title: Gameplay Programming & Platformer Feel
+      intro: Responsive character movement, double jump, tuned acceleration and gravity, knockback, damage, collectibles, enemies and interactive platforming elements.
+      bullets:
+        - Programmed the core gameplay systems outside the HUD.
+        - Tuned separate ground and air acceleration and rising and falling gravity.
+        - Implemented double jump, ground detection, knockback and speed control.
+        - Built moving, falling and one-way platforms, kill zones and collectibles.
+        - Implemented enemy patrol, contact and ranged damage, weak spots and projectiles.
+        - Implemented health, temporary invulnerability and shield gameplay.
+    - title: Cinemachine Camera
+      intro: Camera behavior designed for platforming readability, including contextual framing during vertical movement and long falls.
+      bullets:
+        - Configured Cinemachine cameras for platforming readability and comfort.
+        - Implemented priority switching between normal and fall-focused cameras using vertical velocity, a threshold and a delay.
+    - title: Level Design & Level-Building Workflow
+      intro: Complete level design and a reusable asset workflow intended to make construction and iteration faster.
+      bullets:
+        - Designed all gameplay levels, traversal flow, platform placement, encounters and collectibles.
+        - Built reusable and configurable gameplay assets for faster level assembly and iteration.
+        - Balanced traversal pacing and challenge around the movement and camera systems.
+    - title: Progression & Save Systems
+      intro: Persistent level progression with locked, unlocked and completed states and collected-coin tracking.
+      bullets:
+        - Implemented completion and progression logic.
+        - Saved and loaded completion data using serialized JSON files.
+        - Automatically unlocked subsequent levels after completion.
+    - title: Shader Graph / Technical Art
+      intro: Custom stylized character rendering, an outline effect and a transparent shield bubble effect.
+      bullets:
+        - Character Toon Shader combining the main texture, tinting and a Fresnel contribution.
+        - Vertex-expanded Outline Shader with configurable thickness and color.
+        - Transparent Lit Shield Bubble Shader using Fresnel-driven edge, emission and alpha behavior.
+  technologies: [Unity, C#, Cinemachine, Shader Graph, Unity Input System, ScriptableObjects / DeTach Variables, Odin Inspector]
+  media:
+    - { type: placeholder, label: "TODO: Add platformer game-feel video" }
+    - { type: placeholder, label: "TODO: Add Shader Graph comparison" }
+
+- slug: paletas-de-minas
+  title: Paletas de Minas
+  filter: Games
+  category: Mobile Coloring Game / Cultural Game
+  status: Released
+  period: "TODO: Confirm development period"
+  role: UI Programmer / Game Programmer
+  engine: Unity
+  language: C#
+  platforms: [Mobile]
+  external_link: https://dusthelucky.itch.io/paletas-de-minas
+  external_label: View project on Itch.io
+  featured: true
+  summary: A mobile coloring game inspired by the cultural heritage of Minas Gerais, with a dynamic painting interface that adapts to each illustration and tracks color progress in real time.
+  description: My main responsibility was programming the HUD and integrating it with the existing painting gameplay. The interface dynamically reflects each illustration, generates the correct palette, connects color selection to gameplay and updates painting progress in real time.
+  contributions:
+    - title: Dynamic Painting HUD
+      intro: A gameplay HUD that adapts to each illustration and generates the required color palette automatically.
+      bullets:
+        - Built the core HUD used during painting gameplay.
+        - Connected the interface to the existing coloring system.
+        - Generated palette entries from the colors required by each image.
+        - Configured each generated palette item with its corresponding gameplay color.
+    - title: Color Selection & Gameplay Integration
+      intro: Direct communication between the HUD and painting logic so selected color remains synchronized with gameplay.
+      bullets:
+        - Connected palette buttons to the active painting color.
+        - Managed selected and deselected visual states.
+        - Integrated UI interaction without duplicating the underlying painting logic.
+    - title: Painting Progress Feedback
+      intro: Real-time visual feedback for the progress and completion state of each color.
+      bullets:
+        - Updated individual color progress as painting advanced.
+        - Added completion feedback and removal of completed colors from the active palette.
+        - Kept the HUD synchronized with painting state.
+    - title: Level / Completion UI
+      intro: UI flow for level selection and completed illustrations.
+      bullets:
+        - Connected level buttons to their corresponding image data.
+        - Implemented completed-level presentation and access to finished artwork.
+        - Added UI handling for restarting a completed level.
+  technologies: [Unity, C#, TextMeshPro, UnityEvents / Event-Driven UI Integration, ScriptableObjects, DOTween]
+  challenges:
+    - Integrating a dynamic HUD with an established painting system without duplicating or conflicting with core gameplay logic.
+  media:
+    - { type: placeholder, label: "TODO: Add dynamic painting HUD video loop" }
+
+- slug: draculas-blood-bank
+  title: Dracula's Blood Bank
+  filter: Games
+  category: Game Jam / Resource Management Game
+  status: Prototype
+  period: 2-day Game Jam Plus project
+  context: Game Jam Plus
+  role: Game Programmer
+  engine: Unity
+  language: C#
+  platforms: [Windows]
+  external_link: https://spaguetti.itch.io/draculas-blood-bank
+  external_label: View project on Itch.io
+  featured: true
+  summary: A fast-paced 2D resource-management game created in two days for Game Jam Plus, where Dracula commands vampire servants to gather enough blood before sunrise.
+  description: I worked on programming throughout the jam, contributing across gameplay and integration tasks as the prototype rapidly evolved. Responsibilities overlapped heavily between programmers, so individual systems are intentionally not presented as exclusively mine.
+  contributions:
+    - title: Gameplay Programming & Rapid Prototyping
+      intro: Broad programming support during a two-day production cycle, with constant implementation, integration, debugging and iteration.
+      bullets:
+        - Contributed to the implementation and integration of core gameplay systems.
+        - Worked across character interaction, gameplay state and feedback while systems were prototyped in parallel.
+        - Helped connect systems quickly under strict time constraints.
+        - Participated in debugging, balancing and last-minute iteration.
+    - title: Team Programming / System Integration
+      intro: Collaborative programming where responsibilities were shared between developers rather than cleanly separated by system.
+      bullets:
+        - Integrated gameplay features closely with the other programmers.
+        - Adapted and connected systems during rapid iteration.
+        - Prioritized functional, readable solutions appropriate for the jam scope.
+  team_systems: [Drag-and-drop vampire interaction, NPC blood values and blood collection, Blood-bank capacity and feedback, Timed win/lose conditions, NPC spawning and wandering, Character state-machine behavior and simple animations]
+  technologies: [Unity, C#, UnityEvents, DOTween, 2D Physics, State Machine Pattern]
+  challenges:
+    - With only two days to design, implement, integrate and polish the game, programming prioritized rapid iteration, simple systems, constant communication and fast debugging.
+  media:
+    - { type: placeholder, label: "TODO: Add game jam gameplay footage" }
+
+- slug: laser-heart
+  title: Laser Heart
+  filter: Games
+  category: Rhythm / Driving Game
+  status: Completed
+  period: "TODO: Confirm development period"
+  role: 3D Environment Artist / HUD & UI Implementation
+  engine: Unity
+  featured: true
+  summary: A neon rhythm-driving game inspired by Guitar Hero, where the player drives through futuristic tracks and collects notes in sync with the music.
+  description: Laser Heart was my first complete game project. I worked on the HUD and 3D environments, creating visual assets around a strong neon and bloom-based identity and learning the full game-development workflow.
+  contributions:
+    - title: 3D Environment & Prop Modeling
+      intro: Futuristic roads, buildings, vehicles and scenario assets created specifically for the game's neon visual direction.
+      bullets:
+        - Modeled the 3D environments and scenario assets used throughout the game.
+        - Created buildings, roads, props and vehicles for the futuristic city and tracks.
+        - Designed assets around emissive materials and post-processing rather than surface texture detail.
+        - Used exaggerated shapes, gaps and geometric patterns that became cohesive once bloom was applied.
+    - title: Bloom-Driven Environment Art
+      intro: Environment modeling designed around the final post-processed result, using emissive geometry and negative space as primary visual elements.
+      bullets:
+        - Built silhouettes and repeated geometric patterns for the neon city.
+        - Balanced emissive elements against dark surfaces to preserve road and gameplay readability.
+        - Iterated between modeling and Unity based on the final gameplay-camera bloom result.
+        - Adapted the visual language to different color palettes and track sections.
+    - title: HUD & Menu Implementation
+      intro: Gameplay HUD and menus designed to remain readable within a bright, bloom-heavy visual style.
+      bullets:
+        - Worked on HUD and menu implementation.
+        - Integrated score and multiplier presentation into gameplay.
+        - Created layouts consistent with the futuristic neon direction.
+  technologies: [Unity, 3D Modeling, Post-Processing / Bloom, Emissive Materials, UI / HUD Implementation]
+  challenges:
+    - Designing and iterating assets based on how emissive geometry interacted with bloom in the final gameplay camera.
+  media:
+    - { type: placeholder, label: "TODO: Add bloom-driven environment gallery" }
+
+- slug: reigns
+  title: Reigns
+  filter: Others
+  category: Narrative Systems / Mission Management Prototype
+  status: Prototype / Study Project
+  period: "TODO: Confirm development period"
+  role: Game Programmer
+  engine: Unity
+  language: C#
+  summary: A narrative-management prototype inspired by Dispatch, studying how a systemic visual novel can combine dialogue, characters, missions, conditions and progression.
+  description: This prototype was primarily a technical study using Pixel Crushers Dialogue System for Unity. I explored how narrative content could connect to character stats, unlock conditions, mission assignments, day progression and story events instead of treating dialogue as an isolated system.
+  contributions:
+    - title: Narrative & Event Integration
+      intro: Story events connected to location, day and quest-state requirements through the Dialogue System.
+      bullets:
+        - Integrated Pixel Crushers Dialogue System into the project structure.
+        - Created configurable story events linked to locations and conversations.
+        - Added day, quest-state and one-time playback conditions.
+        - Synchronized current-day and other gameplay variables with dialogue variables.
+    - title: Character & Progression Systems
+      intro: Data-driven characters with stats, temporary conditions and multiple unlock methods.
+      bullets:
+        - Created ScriptableObject-based character data with seven attributes.
+        - Implemented unlocking through starting state, day, completed missions or quest state.
+        - Created temporary conditions that modify stats for a limited number of days.
+    - title: Mission Management Prototype
+      intro: Configurable missions, character assignment and success calculations based on individual and team stats.
+      bullets:
+        - Created mission requirements, duration, rewards, dependencies and repeatability settings.
+        - Implemented availability based on day and completed missions.
+        - Calculated individual and team success chances against requirements.
+        - Added active and completed states, rewards and outcome conditions.
+  technologies: [Unity, C#, Pixel Crushers Dialogue System, ScriptableObjects, Odin Inspector, DOTween, Event-Driven Gameplay Logic]
+  media:
+    - { type: placeholder, label: "TODO: Add narrative system screenshots" }
+
+- slug: rotten
+  title: Rotten
+  filter: Others
+  category: Survival RPG Prototype / Environment Art
+  status: Prototype
+  period: "TODO: Confirm development period"
+  role: 3D Environment Artist
+  engine: Unity
+  compact: true
+  summary: A survival RPG prototype where my contribution focused on building the visual world through vegetation, environment models and scene assembly.
+  contributions:
+    - title: Environment Art & World Building
+      intro: Vegetation, environment assets and complete scene composition for stylized outdoor areas.
+      bullets:
+        - Created vegetation and environmental 3D assets.
+        - Modeled props and scenario elements used throughout the prototype.
+        - Assembled and dressed gameplay environments inside Unity.
+        - Worked on composition, asset placement and visual density to create distinct natural areas.
+  technologies: [Unity, 3D Modeling, Environment Art, Level / Scene Dressing]
+  media:
+    - { type: placeholder, label: "TODO: Add environment art gallery" }
+
+- slug: snow-surfer
+  title: Snow Surfer
+  filter: Others
+  category: 2D Physics / Gameplay Study
+  status: Study Project
+  period: "TODO: Confirm development period"
+  role: Game Programmer
+  engine: Unity
+  language: C#
+  compact: true
+  summary: A small 2D snowboarding study focused on physics-based rotation, tricks, speed control and temporary power-ups.
+  contributions:
+    - title: Physics-Based Gameplay Study
+      intro: Torque-based rotation, flip detection, boost control and configurable temporary power-ups.
+      bullets:
+        - Controlled player rotation through Rigidbody2D torque.
+        - Converted accumulated angular rotation into completed flips and score.
+        - Used a Surface Effector 2D to switch between normal and boosted movement speed.
+        - Created temporary speed and torque power-ups using ScriptableObjects.
+        - Added crash, finish and particle feedback.
+  technologies: [Unity, C#, Rigidbody2D / 2D Physics, Surface Effector 2D, ScriptableObjects, Unity Input System]
+  media:
+    - { type: placeholder, label: "TODO: Add gameplay loop" }
+
+- slug: tilemania
+  title: TileMania
+  filter: Others
+  category: 2D Unity Technical Study
+  status: Study Project
+  period: "TODO: Confirm development period"
+  role: Game Programmer
+  engine: Unity
+  language: C#
+  compact: true
+  summary: A 2D platformer study created to practice Unity's Tilemap workflow, 2D character systems and Cinemachine tools.
+  contributions:
+    - title: 2D Unity Technical Study
+      intro: Rule Tile-based level construction, animated 2D movement and context-sensitive Cinemachine cameras.
+      bullets:
+        - Practiced Tilemap and Rule Tile workflows for faster 2D level construction.
+        - Implemented running, jumping and ladder climbing with Rigidbody2D physics.
+        - Connected movement states to 2D character animations.
+        - Worked with Physics Material 2D and collider-based movement behavior.
+        - Configured a Cinemachine State-Driven Camera based on animation and player state.
+  technologies: [Unity, C#, Tilemap / Rule Tiles, Cinemachine State-Driven Camera, Animator, Rigidbody2D / Physics Material 2D, Unity Input System]
+  media:
+    - { type: placeholder, label: "TODO: Add Tilemap and camera video loop" }

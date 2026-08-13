@@ -1,39 +1,27 @@
-# Chirpy Starter
+# Mariana Soares Mateus - Portfolio
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+Professional game-development portfolio built with Jekyll and the Chirpy theme infrastructure.
 
-A minimal, ready-to-use template for creating a blog with the [**Chirpy**][chirpy] Jekyll theme. Get up and running in minutes with all critical files pre-configured.
+## Content structure
 
-## Why This Starter Exists
+- `_data/projects.yml` contains project cards, facts, contributions, technologies, challenges and media entries.
+- `_data/portfolio.yml` contains profile, About Me, specialties, skills, resume, education, highlights and contact links.
+- `_layouts/portfolio.html` renders the single-page experience and reusable project dialogs.
+- `assets/css/portfolio.css` and `assets/js/portfolio.js` provide the visual system and interactions.
 
-When installing Chirpy through [RubyGems.org][gem], Jekyll can only read a subset of theme files (`_data`, `_layouts`, `_includes`, `_sass`, `assets`) and limited `_config.yml` options from the gem. As a result, users cannot enjoy the full out-of-the-box experience that Chirpy offers.
+## Add a project
 
-To unlock all features, the following files must be present in your Jekyll site:
+Add another entry to `_data/projects.yml`. Use a unique `slug`, one of the filters `Games`, `Apps` or `Others`, and the fields that apply. Empty optional fields are omitted automatically.
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+Project media belongs under `assets/media/projects/<project-slug>/`. Covers belong under `assets/img/portfolio/projects/`. Set `cover` on the project for a card image. Media entries support `image`, `video` and `placeholder`; videos are loaded only when the project dialog opens.
+
+## Local development
+
+Install Ruby and Bundler, then run:
+
+```console
+bundle install
+bundle exec jekyll serve
 ```
 
-This starter bundles those files from the latest **Chirpy** release along with a [CD][CD] workflow, so you can start writing immediately.
-
-## Usage
-
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
-
-## Contributing
-
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+The GitHub Pages workflow builds the production site and runs HTMLProofer.
