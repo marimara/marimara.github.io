@@ -33,7 +33,7 @@
       <aside class="profile-card" aria-label="Profile">
         <div class="profile-photo{% unless portfolio.profile.avatar != blank %} is-placeholder{% endunless %}">
           {% if portfolio.profile.avatar != blank %}
-            <img src="{{ portfolio.profile.avatar | relative_url | escape }}" alt="Portrait of {{ portfolio.profile.name | escape }}">
+            <img src="{{ portfolio.profile.avatar | default: '/assets/img/portfolio/favicon.svg' | relative_url | escape }}" alt="Portrait of {{ portfolio.profile.name | escape }}">
           {% else %}
             <span class="profile-initials" aria-hidden="true">MS</span>
             <small>TODO: Add profile photo</small>
@@ -74,7 +74,7 @@
                 <button type="button" data-project="{{ project.slug | escape }}" aria-haspopup="dialog" aria-labelledby="card-title-{{ project.slug | escape }}">
                   <span class="project-cover">
                     {% if project.cover %}
-                      <img src="{{ project.cover | relative_url | escape }}" alt="{{ project.cover_alt | default: project.title | escape }}" loading="lazy">
+                      <img src="{{ project.cover | default: '/assets/img/portfolio/favicon.svg' | relative_url | escape }}" alt="{{ project.cover_alt | default: project.title | escape }}" loading="lazy">
                     {% else %}
                       <span class="cover-placeholder"><i class="fas fa-image" aria-hidden="true"></i><span>TODO: Add project cover</span></span>
                     {% endif %}
@@ -161,7 +161,7 @@
           {% if project.technologies %}<div class="dialog-section"><h3>Technologies &amp; Tools</h3><ul class="technology-list">{% for technology in project.technologies %}<li>{{ technology | escape }}</li>{% endfor %}</ul></div>{% endif %}
           {% if project.media %}<div class="dialog-section"><h3>Project Media</h3><div class="media-grid">{% for media in project.media %}
             {% case media.type %}
-              {% when 'image' %}<figure class="media-item"><img data-src="{{ media.src | relative_url | escape }}" alt="{{ media.alt | default: project.title | escape }}" loading="lazy"><figcaption>{{ media.label | escape }}</figcaption></figure>
+              {% when 'image' %}<figure class="media-item"><img src="{{ media.src | default: '/assets/img/portfolio/favicon.svg' | relative_url | escape }}" alt="{{ media.alt | default: project.title | escape }}" loading="lazy" decoding="async"><figcaption>{{ media.label | escape }}</figcaption></figure>
               {% when 'video' %}<figure class="media-item"><video data-src="{{ media.src | relative_url | escape }}" muted loop playsinline preload="none" aria-label="{{ media.label | escape }}"></video><figcaption>{{ media.label | escape }}</figcaption></figure>
               {% else %}<div class="media-placeholder"><i class="fas fa-photo-video" aria-hidden="true"></i><span>{{ media.label | escape }}</span></div>
             {% endcase %}
