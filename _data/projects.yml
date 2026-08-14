@@ -112,7 +112,7 @@
   filter: Games
   category: 3D Platformer / Cultural Game
   status: Released
-  period: "TODO: Confirm development period"
+  period: "2025"
   context: Cultural grant from the State of Minas Gerais, Brazil
   role: Gameplay Programmer / Level Designer / Technical Art
   engine: Unity
@@ -168,7 +168,7 @@
   filter: Games
   category: Mobile Coloring Game / Cultural Game
   status: Released
-  period: "TODO: Confirm development period"
+  period: "2025"
   role: UI Programmer / Game Programmer
   engine: Unity
   language: C#
@@ -218,7 +218,7 @@
   filter: Games
   category: Game Jam / Resource Management Game
   status: Prototype
-  period: 2-day Game Jam Plus project
+  period: "2025 — 2-day Game Jam Plus"
   context: Game Jam Plus
   role: Game Programmer
   engine: Unity
@@ -257,7 +257,7 @@
   filter: Games
   category: Rhythm / Driving Game
   status: Completed
-  period: "TODO: Confirm development period"
+  period: "2028"
   role: 3D Environment Artist / HUD & UI Implementation
   engine: Unity
   cover: "/assets/media/projects/Laser Heart/Cover.png"
@@ -302,7 +302,7 @@
   filter: Others
   category: Narrative Systems / Mission Management Prototype
   status: Prototype / Study Project
-  period: "TODO: Confirm development period"
+  period: "2026"
   role: Game Programmer
   engine: Unity
   language: C#
@@ -342,11 +342,13 @@
   filter: Others
   category: Survival RPG Prototype / Environment Art
   status: Prototype
-  period: "TODO: Confirm development period"
+  period: "2019"
   role: 3D Environment Artist
   engine: Unity
   cover: /assets/media/projects/Rotten/Cover.png
   cover_alt: Rotten survival RPG environment
+  links:
+    - { label: Google Drive, url: "https://drive.google.com/drive/folders/1bpDnjJDklEkYvN7CAI7LaN27zDlRqdVR", icon: "fab fa-google-drive" }
   compact: true
   summary: A survival RPG prototype where my contribution focused on building the visual world through vegetation, environment models and scene assembly.
   contributions:
@@ -367,7 +369,7 @@
   filter: Others
   category: 2D Physics / Gameplay Study
   status: Study Project
-  period: "TODO: Confirm development period"
+  period: "2026"
   role: Game Programmer
   engine: Unity
   language: C#
@@ -387,15 +389,12 @@
         - Created temporary speed and torque power-ups using ScriptableObjects.
         - Added crash, finish and particle feedback.
   technologies: [Unity, C#, Rigidbody2D / 2D Physics, Surface Effector 2D, ScriptableObjects, Unity Input System]
-  media:
-    - { type: placeholder, label: "TODO: Add gameplay loop" }
-
 - slug: tilemania
   title: TileMania
   filter: Others
   category: 2D Unity Technical Study
   status: Study Project
-  period: "TODO: Confirm development period"
+  period: "2026"
   role: Game Programmer
   engine: Unity
   language: C#
