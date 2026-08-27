@@ -50,12 +50,6 @@
         - Data-driven rain intensity, flood thresholds and level parameters
       media: { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Flood minigame video loop.mp4", label: "Flood Simulation & Dynamic Water System" }
   technologies: [Unity, C#, ScriptableObjects, Unity Input System, UnityEvents / Event-Driven Architecture, DeTach, DOTween, Odin Inspector]
-  challenges:
-    - Working with multiple systems based on hexagonal grids and neighborhood relationships.
-    - Creating configurable systems that support several levels and content types without duplicating logic.
-    - Synchronizing gameplay rules, runtime data and visual feedback across minigames with very different goals.
-    - Making spatial scoring, pipe flow and flooding visually understandable to the player.
-  solution: I separate configuration, runtime state, logic and presentation whenever a system starts to grow. ScriptableObjects store configurable data and rules, while events connect gameplay logic to UI and visual effects. Spatial systems identify cells through grid coordinates instead of relying only on raycasts or scene references.
 - slug: farm-your-friends
   title: Farm Your Friends
   filter: Games
