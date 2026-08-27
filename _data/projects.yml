@@ -1,6 +1,6 @@
 - slug: bacia-hidrografica-virtual
   title: Bacia Hidrográfica Virtual
-  filter: Apps
+  filter: Programming
   category: Educational Game / Interactive Platform
   status: In Development
   period: 2025 - Present
@@ -56,7 +56,7 @@
   technologies: [Unity, C#, ScriptableObjects, Unity Input System, UnityEvents / Event-Driven Architecture, DeTach, DOTween, Odin Inspector]
 - slug: farm-your-friends
   title: Farm Your Friends
-  filter: Games
+  filter: Art
   category: Party Game / Online Co-op & PvP
   status: Released
   period: Released May 1, 2025
@@ -88,7 +88,7 @@
 
 - slug: reliquias-de-minas
   title: Relíquias de Minas
-  filter: Games
+  filter: Programming
   category: 3D Platformer / Cultural Game
   status: Released
   period: "2025"
@@ -119,7 +119,7 @@
 
 - slug: paletas-de-minas
   title: Paletas de Minas
-  filter: Games
+  filter: Programming
   category: Mobile Coloring Game / Cultural Game
   status: Released
   period: "2025"
@@ -149,7 +149,7 @@
 
 - slug: draculas-blood-bank
   title: Dracula's Blood Bank
-  filter: Games
+  filter: Programming
   category: Game Jam / Resource Management Game
   status: Prototype
   period: "2025 — 2-day Game Jam Plus"
@@ -180,7 +180,7 @@
 
 - slug: laser-heart
   title: Laser Heart
-  filter: Games
+  filter: Art
   category: Rhythm / Driving Game
   status: Completed
   period: "2028"
@@ -211,7 +211,7 @@
 
 - slug: reigns
   title: Reigns
-  filter: Others
+  filter: Programming
   category: Narrative Systems / Mission Management Prototype
   status: Prototype / Study Project
   period: "2026"
@@ -239,7 +239,7 @@
 
 - slug: rotten
   title: Rotten
-  filter: Others
+  filter: Art
   category: Survival RPG Prototype / Environment Art
   status: Prototype
   period: "2019"
@@ -261,7 +261,7 @@
 
 - slug: snow-surfer
   title: Snow Surfer
-  filter: Others
+  filter: Programming
   category: 2D Physics / Gameplay Study
   status: Study Project
   period: "2026"
@@ -286,7 +286,7 @@
   technologies: [Unity, C#, Rigidbody2D / 2D Physics, Surface Effector 2D, ScriptableObjects, Unity Input System]
 - slug: tilemania
   title: TileMania
-  filter: Others
+  filter: Programming
   category: 2D Unity Technical Study
   status: Study Project
   period: "2026"
