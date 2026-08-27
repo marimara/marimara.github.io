@@ -15,41 +15,40 @@
   summary: Educational platform developed in Unity that combines interactive hydrographic basin maps with minigames focused on land use, sanitation and flood management.
   description: "My work includes both basin navigation and visualization systems and the development of three minigames: Maps, Poop and Flood. My contributions include hex-grid systems, tile placement, configurable scoring rules, river connectivity, flow through pipe networks and a flood simulation based on per-cell map data."
   contributions:
-    - title: Navigation & Basin Maps
-      intro: Interactive basin selection, camera navigation and procedural 3D map generation from editable hex-grid land-use data, including automatic river visualization.
+    - title: Hex-Based Strategy & Level Tools
+      intro: Custom hex-grid gameplay system with data-driven level creation and automatic tile connectivity.
       bullets:
-        - Selection and navigation system between different hydrographic basins.
+        - Hexagonal grid, neighbor detection & tile placement
+        - Custom in-editor map painting tool
         - Event-driven updates for basin title, description and destination scene.
-        - Camera controls with drag, zoom and navigation limits.
-        - 3D map rendering from land-use data stored in a hexagonal grid.
-        - Special river rendering based on neighboring cell connections.
-        - Custom editor tool for painting and configuring the hex map directly in the Inspector.
-    - title: Maps Minigame
-      intro: Hex-based tile placement with contextual scoring, modular ScriptableObject rules and automatic river connectivity and rotation based on neighboring tiles.
+        - Automatic river connection & rotation system
+      media: { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Basin.mp4", label: "Hex-Based Strategy & Level Tools" }
+    - title: Data-Driven Gameplay & Scoring System
+      intro: Modular strategy system where tile placement, neighboring pieces and configurable rules dynamically affect gameplay.
       bullets:
-        - Runtime hex-grid generation, deck and tile-placement systems.
-        - Placement preview and rotation in 60-degree increments.
-        - Modular scoring and rule system based on ScriptableObjects.
-        - Neighbor calculation for odd and even rows in a hex grid.
-        - River connectivity, automatic river-piece rotation and cascading score feedback.
-    - title: Poop Minigame
-      intro: Dynamic pipe connectivity and flow calculation, where each pipe's rotation and condition determine the valid path, leaks and gameplay interactions.
+        - ScriptableObject-based modular scoring rules
+        - Hex-neighbor interactions with contextual bonuses & penalties
+        - Dynamic score recalculation when neighboring tiles change
+        - Deck-based tile placement with real-time preview & 60° rotation
+        - Automatic game time river connection validation
+      media: { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Maps minigame video loop.mp4", label: "Data-Driven Gameplay & Scoring System" }
+    - title: Dynamic Water Flow & Pipe Network
+      intro: Real-time pipe connectivity and animated water-flow system built around Unity's LineRenderer.
       bullets:
-        - Puzzle system based on a network of rotatable pipes.
-        - Spatial validation of connections between pipe endpoints.
-        - Calculation and visualization of the path followed by the flow.
-        - Flow interactions with broken pipes, buffs and debuffs.
-        - Repair and cleaning tools integrated into the puzzle rules.
-        - Movement, repair and win/lose state management.
-    - title: Flood Minigame
-      intro: A data-driven urban planning system where player choices affect how rainfall is absorbed, drained and accumulated across the map.
+        - Procedural pipe connection and path traversal
+        - Dynamic LineRenderer path generation and animated flow propagation
+        - Incremental path rebuilding when the pipe network changes
+        - Flow-driven gameplay events including leaks, buffs, debuffs and checkpoints
+      media: { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Poop minigame video loop.mp4", label: "Dynamic Water Flow & Pipe Network" }
+    - title: Flood Simulation & Dynamic Water System
+      intro: Custom hex-grid flood simulation driven by rainfall, terrain elevation and per-tile water absorption.
       bullets:
-        - Architecture separating static data, runtime state, grid, simulation and presentation.
-        - Selection and placement system for urban and environmental tiles.
-        - ScriptableObject-driven tiles with water absorption and other properties.
-        - Per-cell rainfall and flood simulation with water and elevation visualization.
-        - Event-driven rain sequencing connecting gameplay, HUD and VFX.
-        - Tooltips showing received, drained and absorbed water after the simulation.
+        - Terrain-aware flood simulation across interconnected hex cells
+        - Per-tile rainfall, absorption and flood-depth calculations
+        - Neighbor-aware water rendering for continuous flood surfaces
+        - Custom level editor for painting terrain type and elevation
+        - Data-driven rain intensity, flood thresholds and level parameters
+      media: { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Flood minigame video loop.mp4", label: "Flood Simulation & Dynamic Water System" }
   technologies: [Unity, C#, ScriptableObjects, Unity Input System, UnityEvents / Event-Driven Architecture, DeTach, DOTween, Odin Inspector]
   challenges:
     - Working with multiple systems based on hexagonal grids and neighborhood relationships.
@@ -57,12 +56,6 @@
     - Synchronizing gameplay rules, runtime data and visual feedback across minigames with very different goals.
     - Making spatial scoring, pipe flow and flooding visually understandable to the player.
   solution: I separate configuration, runtime state, logic and presentation whenever a system starts to grow. ScriptableObjects store configurable data and rules, while events connect gameplay logic to UI and visual effects. Spatial systems identify cells through grid coordinates instead of relying only on raycasts or scene references.
-  media:
-    - { type: image, src: "/assets/media/projects/BaciaHidrograficaVirtual/basin navigation media.png", alt: "Hydrographic basin navigation interface", label: "Navigation & Basin Maps" }
-    - { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Maps minigame video loop.mp4", label: "Maps Minigame — tile placement and river connectivity" }
-    - { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Poop minigame video loop.mp4", label: "Poop Minigame — pipe connectivity and flow" }
-    - { type: video, src: "/assets/media/projects/BaciaHidrograficaVirtual/Flood minigame video loop.mp4", label: "Flood Minigame — rainfall and flood simulation" }
-
 - slug: farm-your-friends
   title: Farm Your Friends
   filter: Games

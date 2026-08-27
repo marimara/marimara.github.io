@@ -154,7 +154,13 @@
           </dl>
           {% if project.description %}<div class="dialog-section"><h3>About the Project</h3><p>{{ project.description | escape }}</p></div>{% endif %}
           {% if project.contributions %}<div class="dialog-section contributions"><h3>My Contributions</h3><div class="contribution-grid">
-            {% for contribution in project.contributions %}<article><h4>{{ contribution.title | escape }}</h4>{% if contribution.intro %}<p>{{ contribution.intro | escape }}</p>{% endif %}{% if contribution.bullets %}<ul>{% for bullet in contribution.bullets %}<li>{{ bullet | escape }}</li>{% endfor %}</ul>{% endif %}</article>{% endfor %}
+            {% for contribution in project.contributions %}<article><h4>{{ contribution.title | escape }}</h4>{% if contribution.intro %}<p>{{ contribution.intro | escape }}</p>{% endif %}{% if contribution.bullets %}<ul>{% for bullet in contribution.bullets %}<li>{{ bullet | escape }}</li>{% endfor %}</ul>{% endif %}{% if contribution.media %}
+              {% assign media = contribution.media %}
+              {% case media.type %}
+                {% when 'image' %}<figure class="media-item contribution-media"><img src="{{ media.src | default: '/assets/img/portfolio/favicon.svg' | relative_url | escape }}" alt="{{ media.alt | default: contribution.title | escape }}" loading="lazy" decoding="async"><figcaption>{{ media.label | escape }}</figcaption></figure>
+                {% when 'video' %}<figure class="media-item contribution-media"><video data-src="{{ media.src | relative_url | escape }}" muted loop playsinline preload="none" aria-label="{{ media.label | escape }}"></video><figcaption>{{ media.label | escape }}</figcaption></figure>
+              {% endcase %}
+            {% endif %}</article>{% endfor %}
           </div></div>{% endif %}
           {% if project.team_systems %}<div class="dialog-section"><h3>Systems Developed by the Programming Team</h3><p class="context-note">These systems are listed as shared team work; no exclusive ownership is claimed.</p><ul>{% for item in project.team_systems %}<li>{{ item | escape }}</li>{% endfor %}</ul></div>{% endif %}
           {% if project.challenges %}<div class="dialog-section"><h3>Technical Challenges</h3><ul>{% for challenge in project.challenges %}<li>{{ challenge | escape }}</li>{% endfor %}</ul>{% if project.solution %}<p>{{ project.solution | escape }}</p>{% endif %}</div>{% endif %}
