@@ -156,8 +156,8 @@
             {% for contribution in project.contributions %}<article><h4>{{ contribution.title | escape }}</h4>{% if contribution.intro %}<p>{{ contribution.intro | escape }}</p>{% endif %}{% if contribution.bullets %}<ul>{% for bullet in contribution.bullets %}<li>{{ bullet | escape }}</li>{% endfor %}</ul>{% endif %}{% if contribution.media %}<div class="contribution-media-grid">
               {% for media in contribution.media %}
                 {% case media.type %}
-                  {% when 'image' %}<figure class="media-item"><img src="{{ media.src | default: '/assets/img/portfolio/favicon.svg' | relative_url | escape }}" alt="{{ media.alt | default: contribution.title | escape }}" loading="lazy" decoding="async"><figcaption>{{ media.label | escape }}</figcaption></figure>
-                  {% when 'video' %}<figure class="media-item"><video data-src="{{ media.src | relative_url | escape }}" muted loop playsinline preload="none" aria-label="{{ media.label | escape }}"></video><figcaption>{{ media.label | escape }}</figcaption></figure>
+                  {% when 'image' %}<figure class="media-item expandable-media" tabindex="0" role="button" data-expand-media aria-label="View larger: {{ media.label | default: contribution.title | escape }}"><img src="{{ media.src | default: '/assets/img/portfolio/favicon.svg' | relative_url | escape }}" alt="{{ media.alt | default: contribution.title | escape }}" loading="lazy" decoding="async"><figcaption>{{ media.label | escape }}</figcaption></figure>
+                  {% when 'video' %}<figure class="media-item expandable-media" tabindex="0" role="button" data-expand-media aria-label="View larger: {{ media.label | default: contribution.title | escape }}"><video data-src="{{ media.src | relative_url | escape }}" muted loop playsinline preload="none" aria-label="{{ media.label | escape }}"></video><figcaption>{{ media.label | escape }}</figcaption></figure>
                 {% endcase %}
               {% endfor %}
             </div>{% endif %}</article>{% endfor %}
@@ -167,13 +167,20 @@
           {% if project.technologies %}<div class="dialog-section"><h3>Technologies &amp; Tools</h3><ul class="technology-list">{% for technology in project.technologies %}<li>{{ technology | escape }}</li>{% endfor %}</ul></div>{% endif %}
           {% if project.media %}<div class="dialog-section"><h3>Project Media</h3><div class="media-grid">{% for media in project.media %}
             {% case media.type %}
-              {% when 'image' %}<figure class="media-item"><img src="{{ media.src | default: '/assets/img/portfolio/favicon.svg' | relative_url | escape }}" alt="{{ media.alt | default: project.title | escape }}" loading="lazy" decoding="async"><figcaption>{{ media.label | escape }}</figcaption></figure>
-              {% when 'video' %}<figure class="media-item"><video data-src="{{ media.src | relative_url | escape }}" muted loop playsinline preload="none" aria-label="{{ media.label | escape }}"></video><figcaption>{{ media.label | escape }}</figcaption></figure>
+              {% when 'image' %}<figure class="media-item expandable-media" tabindex="0" role="button" data-expand-media aria-label="View larger: {{ media.label | default: project.title | escape }}"><img src="{{ media.src | default: '/assets/img/portfolio/favicon.svg' | relative_url | escape }}" alt="{{ media.alt | default: project.title | escape }}" loading="lazy" decoding="async"><figcaption>{{ media.label | escape }}</figcaption></figure>
+              {% when 'video' %}<figure class="media-item expandable-media" tabindex="0" role="button" data-expand-media aria-label="View larger: {{ media.label | default: project.title | escape }}"><video data-src="{{ media.src | relative_url | escape }}" muted loop playsinline preload="none" aria-label="{{ media.label | escape }}"></video><figcaption>{{ media.label | escape }}</figcaption></figure>
               {% else %}<div class="media-placeholder"><i class="fas fa-photo-video" aria-hidden="true"></i><span>{{ media.label | escape }}</span></div>
             {% endcase %}
           {% endfor %}</div></div>{% endif %}
         </div>
       </dialog>
     {% endfor %}
+    <dialog class="media-lightbox" aria-label="Expanded project media">
+      <div class="media-lightbox-shell">
+        <button class="media-lightbox-close" type="button" aria-label="Close expanded media"><i class="fas fa-times" aria-hidden="true"></i></button>
+        <div class="media-lightbox-content"></div>
+        <p class="media-lightbox-caption"></p>
+      </div>
+    </dialog>
   </body>
 </html>

@@ -167,6 +167,18 @@ footer { padding: 24px 40px; color: #98989f; font-size: .8rem; text-align: cente
 .media-item { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #171719; }
 .media-item img, .media-item video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .media-item figcaption { padding: 10px 12px; color: var(--muted); font-size: .82rem; }
+.expandable-media { position: relative; cursor: zoom-in; transition: border-color .2s ease, box-shadow .2s ease; }
+.expandable-media::after { position: absolute; top: 10px; right: 10px; padding: 5px 9px; border: 1px solid rgba(255,255,255,.2); border-radius: 7px; background: rgba(12,12,14,.82); color: #fff; font-size: .7rem; font-weight: 700; letter-spacing: .02em; opacity: 0; pointer-events: none; transition: opacity .2s ease; content: "View larger"; }
+.expandable-media:hover, .expandable-media:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(255,181,192,.12); outline: none; }
+.expandable-media:hover::after, .expandable-media:focus-visible::after { opacity: 1; }
+.media-lightbox { width: min(1400px, calc(100% - 32px)); max-width: none; max-height: calc(100vh - 32px); padding: 0; border: 1px solid #44444a; border-radius: 16px; background: #111113; color: var(--text); box-shadow: 0 28px 100px rgba(0,0,0,.75); }
+.media-lightbox::backdrop { background: rgba(3,3,4,.92); backdrop-filter: blur(6px); }
+.media-lightbox-shell { position: relative; display: grid; min-height: 180px; padding: 52px 18px 16px; }
+.media-lightbox-close { position: absolute; z-index: 2; top: 10px; right: 10px; display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #4a4a50; border-radius: 50%; background: #26262a; color: var(--text); cursor: pointer; }
+.media-lightbox-close:hover, .media-lightbox-close:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+.media-lightbox-content { display: grid; place-items: center; }
+.media-lightbox-content img, .media-lightbox-content video { display: block; max-width: 100%; max-height: calc(100vh - 130px); object-fit: contain; }
+.media-lightbox-caption { margin: 12px 0 0; color: var(--muted); font-size: .88rem; text-align: center; }
 .media-placeholder { min-height: 160px; display: grid; place-content: center; gap: 9px; border: 1px dashed #46464b; border-radius: 12px; color: #86868d; text-align: center; background: #1d1d20; }
 .media-placeholder i { color: var(--accent); font-size: 1.5rem; }
 
@@ -207,6 +219,7 @@ footer { padding: 24px 40px; color: #98989f; font-size: .8rem; text-align: cente
   .project-card-meta { display: block; margin-top: 5px; }
   .specialty-card { padding: 20px; }
   .project-dialog { width: 100%; max-width: none; height: 100%; max-height: none; border: 0; border-radius: 0; }
+  .media-lightbox { width: 100%; height: 100%; max-height: none; border: 0; border-radius: 0; }
   .dialog-shell { padding: 24px 18px 48px; }
   .dialog-close { margin: -5px -2px 0 12px; }
   .project-facts { grid-template-columns: 1fr; }

@@ -9,7 +9,13 @@
   const mobileNav = document.querySelector('.mobile-nav');
   const navLinks = [...document.querySelectorAll('.desktop-nav a, .mobile-nav a')];
   const dialogs = [...document.querySelectorAll('.project-dialog')];
+  const mediaLightbox = document.querySelector('.media-lightbox');
+  const mediaLightboxContent = mediaLightbox?.querySelector('.media-lightbox-content');
+  const mediaLightboxCaption = mediaLightbox?.querySelector('.media-lightbox-caption');
   let lastTrigger = null;
+  let lastMediaTrigger = null;
+  let sourceVideo = null;
+  let sourceVideoWasPlaying = false;
 
   const setFilter = (filter) => {
     let visibleCount = 0;
@@ -68,8 +74,67 @@
     });
   });
 
+  const openMediaLightbox = (figure) => {
+    if (!mediaLightbox || !mediaLightboxContent || !mediaLightboxCaption) return;
+    const source = figure.querySelector('img, video');
+    if (!source) return;
+
+    let expandedMedia;
+    if (source.tagName === 'VIDEO') {
+      sourceVideo = source;
+      sourceVideoWasPlaying = !source.paused;
+      source.pause();
+      expandedMedia = document.createElement('video');
+      expandedMedia.src = source.currentSrc || source.src || source.dataset.src;
+      expandedMedia.controls = true;
+      expandedMedia.autoplay = true;
+      expandedMedia.loop = source.loop;
+      expandedMedia.muted = source.muted;
+      expandedMedia.playsInline = true;
+    } else {
+      expandedMedia = document.createElement('img');
+      expandedMedia.src = source.currentSrc || source.src;
+      expandedMedia.alt = source.alt || '';
+    }
+
+    lastMediaTrigger = figure;
+    mediaLightboxContent.replaceChildren(expandedMedia);
+    mediaLightboxCaption.textContent = figure.querySelector('figcaption')?.textContent || '';
+    mediaLightbox.showModal();
+    mediaLightbox.querySelector('.media-lightbox-close')?.focus();
+    if (expandedMedia.tagName === 'VIDEO') expandedMedia.play().catch(() => {});
+  };
+
+  document.querySelectorAll('[data-expand-media]').forEach((figure) => {
+    figure.addEventListener('click', () => openMediaLightbox(figure));
+    figure.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      openMediaLightbox(figure);
+    });
+  });
+
+  mediaLightbox?.querySelector('.media-lightbox-close')?.addEventListener('click', () => mediaLightbox.close());
+  mediaLightbox?.addEventListener('click', (event) => {
+    if (event.target === mediaLightbox) mediaLightbox.close();
+  });
+  mediaLightbox?.addEventListener('close', () => {
+    mediaLightboxContent?.querySelector('video')?.pause();
+    mediaLightboxContent?.replaceChildren();
+    if (sourceVideo && sourceVideoWasPlaying) sourceVideo.play().catch(() => {});
+    sourceVideo = null;
+    sourceVideoWasPlaying = false;
+    lastMediaTrigger?.focus();
+    lastMediaTrigger = null;
+  });
+
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
+    if (mediaLightbox?.open) {
+      event.preventDefault();
+      mediaLightbox.close();
+      return;
+    }
     const openDialog = dialogs.find((dialog) => dialog.open);
     if (openDialog) {
       event.preventDefault();
